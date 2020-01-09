@@ -572,25 +572,25 @@ const createLoadMoreTemplate = () => {
   );
 };
 
-const render = (container, template, place) => {
+const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
 
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 
-render(siteHeaderElement, createSiteMenuTemplate(), `beforeend`);
-render(siteMainElement, createFilterTemplate(), `beforeend`);
-render(siteMainElement, createBoardTemplate(), `beforeend`);
+render(siteHeaderElement, createSiteMenuTemplate());
+render(siteMainElement, createFilterTemplate());
+render(siteMainElement, createBoardTemplate());
 
 const taskListElement = siteMainElement.querySelector(`.board__tasks`);
-render(taskListElement, createTaskEditTemplate(), `beforeend`);
+render(taskListElement, createTaskEditTemplate());
 
 new Array(TASK_COUNT)
   .fill(``)
   .forEach(
-      () => render(taskListElement, createTaskTemplate(), `beforeend`)
+      () => render(taskListElement, createTaskTemplate())
   );
 
 const boardElement = siteMainElement.querySelector(`.board`);
-render(boardElement, createLoadMoreTemplate(), `beforeend`);
+render(boardElement, createLoadMoreTemplate());

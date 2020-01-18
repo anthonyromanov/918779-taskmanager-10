@@ -26,7 +26,7 @@ const renderTemplates = () => {
   let TemplateData = createTaskTemplate();
 
   for (let i = 0; i < TASK_COUNT - 1; i++) {
-   TemplateData +=createTaskTemplate();
+    TemplateData += createTaskTemplate();
   }
   render(taskListElement, TemplateData, `beforeend`);
 

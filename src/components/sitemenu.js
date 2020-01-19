@@ -1,6 +1,5 @@
 export const createSiteMenuTemplate = () => {
-  return (
-    `<section class="control__btn-wrap">
+  return `<section class="control__btn-wrap">
           <input
             type="radio"
             name="control"
@@ -28,6 +27,5 @@ export const createSiteMenuTemplate = () => {
             >STATISTICS</label
           >
         </section>
-      </section>`
-  );
+      </section>`;
 };
